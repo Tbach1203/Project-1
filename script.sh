@@ -23,7 +23,7 @@ awk -F, '{
     for(i in a) {
         if(a[i] != "") print a[i];
     }
-}' normalize-movies.csv | sort | uniq -c | sort -nr | head -1 | awk '$1 = ""; sub(/^ /,""); {print }'
+}' normalize-movies.csv | sort | uniq -c | sort -nr | head -1 | awk '$1 = ""; {print }'
 
 awk -F, '{split($7, a, "|");for(i in a) {if(a[i] != "") print a[i];}}' normalize-movies.csv | sort | uniq -c | sort -nr | head -1 | awk '$1 = ""; {print }'
 
